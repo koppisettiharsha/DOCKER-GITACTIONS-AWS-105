@@ -13,7 +13,7 @@ services:
       - springboot-mysql-net
 
   backend:
-    image: suryakiran1993/docker-backend:latest
+    image: koppisettiharsha/docker-backend:latest
     container_name: springboot
     ports:
       - "2025:2000"
