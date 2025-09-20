@@ -22,8 +22,15 @@ public class StudentController {
     @GetMapping("/")
     public String home() 
     {
-        return "Docker Full Stack Deployment Demo";
+        return "Docker-Backend id Running";
     }
+
+    @GetMapping("/docker")
+    public String docker()
+    {
+        return "Docker Fullstack deployment ";
+    }
+
     
 
     @PostMapping("/add")
