@@ -28,7 +28,7 @@ public class StudentController {
     @GetMapping("/docker")
     public String docker()
     {
-        return "Docker Fullstack deployment ";
+        return "Docker Fullstack deployment  ";
     }
 
     
