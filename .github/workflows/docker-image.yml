@@ -46,15 +46,9 @@ jobs:
       - name: Deploy to AWS EC2
         run: |
           ssh -o StrictHostKeyChecking=no -i private_key.pem ec2-user@${{ secrets.AWS_IP }} << 'EOF'
-            sudo apt-get update -y
-            sudo apt-get install -y docker-compose-plugin || \
-              (sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose)
-
             cd DOCKER-GITACTIONS-AWS-105 || git clone https://github.com/${{ github.repository }}.git
             cd DOCKER-GITACTIONS-AWS-105
             git pull origin main
-
-            sudo docker system prune -af
             sudo docker-compose down
             sudo docker-compose pull
             sudo docker-compose up -d --build
